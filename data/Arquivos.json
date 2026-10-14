@@ -1,38 +1,13 @@
-[
-  {
+{
     "id": 1,
-    "titulo": "Análise de Políticas Públicas e Cidade",
-    "autor": "Gabriel Andrade Openkowski",
-    "orientador": "Profa. Dra. Samira Kauchakje",
-    "tipo": "Dissertação",
-    "ano": 2026,
-    "resumo": "Estudo sobre a formulação de políticas públicas urbanas e seus impactos na comunidade.",
+    "titulo": "QCA e Process Tracing: conectando Ciência Política e História",
+    "autor": "Renato Perissinotto",
+    "tipo": "Artigo Publicado",
+    "ano": 2024,
+    "resumo": "Sobre Process Tracing e a pesquisa nas Ciências Políticas",
     "acesso": "publico",
-    "link_arquivo": "documentos/dissertacao-gabriel.pdf",
-    "tags": ["políticas públicas", "cidade", "CIdaPOL"]
-  },
-  {
-    "id": 2,
-    "titulo": "Slides de Defesa: Investigação Empírica de Dados Abertos",
-    "autor": "Pesquisador CIdaPOL",
-    "orientador": "Profa. Dra. Samira Kauchakje",
-    "tipo": "Slides de Defesa",
-    "ano": 2025,
-    "resumo": "Apresentação dos dados de revisão bibliográfica e resultados empíricos da pesquisa.",
-    "acesso": "restrito",
-    "link_arquivo": "",
-    "tags": ["slides", "dados empíricos", "defesa"]
-  },
-  {
-    "id": 3,
-    "titulo": "Curso de Introdução às Normas de Coautoria e Difusão Científica",
-    "autor": "Equipe CIdaPOL",
-    "orientador": "Profa. Dra. Samira Kauchakje",
-    "tipo": "Vídeo / Curso",
-    "ano": 2026,
-    "resumo": "Vídeo-aula sobre as diretrizes éticas, declaração de IA e coautoria nos textos do grupo.",
-    "acesso": "publico",
-    "link_arquivo": "https://www.youtube.com/watch?v=EXEMPLO",
-    "tags": ["vídeo", "curso", "normas", "IA"]
+    "link_arquivo": "documentos/QCA e Process Tracing - conectando Ciência Política e História.pdf",
+    "tags": ["artigo", "pesquisa", "CIdaPOL"]
   }
-]
+
+
