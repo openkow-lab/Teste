@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repositório CidaPOL – Laboratório de Ciência da Política (UDESC)</title>
+<meta name="description" content="Repositório de acesso aberto do CidaPOL: dados de pesquisa, teses, publicações, normas e materiais de difusão científica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --vinho:#7a1015;
+    --vinho-escuro:#5e0b0f;
+    --ferrugem:#a5300f;
+    --texto:#1a1a1a;
+    --fundo:#ffffff;
+    --suave:#f6efee;
+    --borda:#e3d3d1;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --texto:#f2e9e8; --fundo:#1b1112; --suave:#2a1819; --borda:#4a2c2d;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0; font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--texto); background:var(--fundo); line-height:1.6;
+    border-left:22px solid var(--ferrugem);
+  }
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--ferrugem); outline-offset:3px}
+  .wrap{max-width:980px; margin:0 auto; padding:0 24px}
+
+  /* Cabeçalho: logo + chevron vinho, como no cartaz */
+  header{padding:36px 0 8px; position:relative}
+  header .tag{
+    position:absolute; left:-24px; top:48px; width:64px; height:84px;
+    background:var(--vinho);
+    clip-path:polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%);
+  }
+  .logo{display:block; margin:0 auto; width:min(420px,80%); height:auto}
+  .logo-wrap{background:#fff; width:fit-content; margin:0 auto; padding:6px 14px; border-radius:4px}
+
+  .hero{text-align:center; padding:28px 0 36px}
+  .hero h1{font-size:clamp(1.6rem,4.5vw,2.4rem); line-height:1.2; margin:0 0 10px; font-weight:700}
+  .hero p{max-width:60ch; margin:0 auto; font-size:1.05rem}
+  .hero .destaque{color:var(--vinho); font-weight:700}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero .destaque{color:#e07b80}}
+
+  /* Painel vinho com bullets, igual ao bloco do cartaz */
+  .painel{background:var(--vinho); color:#fff; padding:28px 32px; margin:0 -24px}
+  .painel h2{margin:0 0 6px; font-size:1.35rem; font-weight:600}
+  .painel > p{margin:0 0 18px; opacity:.9}
+  .lista{list-style:none; margin:0; padding:0; display:grid; gap:2px}
+  .lista li{position:relative}
+  .lista a{
+    display:block; text-decoration:none; padding:12px 12px 12px 30px; border-radius:4px;
+    font-weight:500;
+  }
+  .lista a::before{content:"•"; position:absolute; left:10px; font-weight:700}
+  .lista a small{display:block; font-weight:400; opacity:.85; font-size:.88rem}
+  .lista a:hover{background:var(--vinho-escuro)}
+  .lista a:hover strong{text-decoration:underline; text-underline-offset:3px}
+  @media (min-width:760px){.lista{grid-template-columns:1fr 1fr; column-gap:24px}}
+
+  section{padding:40px 0 8px}
+  section h2{font-size:1.4rem; margin:0 0 14px; padding-left:14px; border-left:6px solid var(--vinho); font-weight:700}
+  .links{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .links a{
+    display:block; padding:16px 18px; border:1px solid var(--borda); background:var(--suave);
+    text-decoration:none; border-radius:4px; font-weight:600
+  }
+  .links a span{display:block; font-weight:400; font-size:.9rem; opacity:.8}
+  .links a:hover{border-color:var(--vinho)}
+
+  .aviso{background:var(--suave); border-left:6px solid var(--ferrugem); padding:14px 18px; border-radius:0 4px 4px 0; font-size:.95rem}
+
+  footer{margin-top:48px; padding:24px 0 36px; border-top:1px solid var(--borda); font-size:.9rem}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between}
+  footer img{height:44px; width:auto; background:#fff; padding:4px 8px; border-radius:4px}
+
+  @media (max-width:600px){
+    body{border-left-width:12px}
+    header .tag{display:none}
+    .painel{padding:22px 16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="tag" aria-hidden="true"></span>
+    <div class="logo-wrap">
+      <img class="logo" src="assets/logo-cidapol.png" alt="CidaPOL – Laboratório de Ciência da Política">
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Repositório de <span class="destaque">acesso aberto</span></h1>
+      <p>Dados, textos e normas produzidos por pesquisadoras e pesquisadores do CidaPOL, reunidos em um só lugar para consulta, citação e reutilização.</p>
+    </div>
+
+    <div class="painel">
+      <h2>O que você encontra aqui</h2>
+      <p>Escolha uma coleção para começar.</p>
+      <ul class="lista">
+        <li><a href="acervo/dados/"><strong>Bancos de dados de pesquisa</strong><small>Ciência aberta: revisão de literatura e investigação empírica</small></a></li>
+        <li><a href="acervo/slides/"><strong>Slides de defesa</strong><small>Apresentações de qualificações e defesas</small></a></li>
+        <li><a href="acervo/teses/"><strong>Teses, dissertações e TCCs</strong><small>Pesquisadores do CidaPOL, orientação da Profa. Dra. Samira Kauchakje</small></a></li>
+        <li><a href="acervo/publicacoes/"><strong>Textos publicados</strong><small>Artigos, capítulos e livros</small></a></li>
+        <li><a href="acervo/sumarios-executivos/"><strong>Sumários executivos</strong><small>Resultados em versão curta</small></a></li>
+        <li><a href="acervo/divulgacao/"><strong>Divulgação científica</strong><small>Materiais para organizações públicas</small></a></li>
+        <li><a href="#normas"><strong>Normas do laboratório</strong><small>Coautoria, declaração de uso de IA, nota de participação</small></a></li>
+        <li><a href="#links"><strong>Grupos e links de interesse</strong><small>Grupos associados, sites e dados úteis</small></a></li>
+      </ul>
+    </div>
+
+    <section id="normas">
+      <h2>Normas do laboratório</h2>
+      <div class="links">
+        <a href="normas/coautoria.pdf">Coautoria<span>Critérios e ordem de autoria</span></a>
+        <a href="normas/declaracao-ia.pdf">Declaração de uso de IA<span>Modelo para inserir nos textos</span></a>
+        <a href="normas/nota-cidapol.pdf">Nota de participação CidaPOL<span>Texto padrão para publicações</span></a>
+      </div>
+    </section>
+
+    <section id="links">
+      <h2>Grupos associados e links de interesse</h2>
+      <div class="links">
+        <a href="https://www.udesc.br" target="_blank" rel="noopener">UDESC<span>Universidade do Estado de Santa Catarina</span></a>
+        <a href="#">Grupo associado 1<span>Adicione o nome e o link</span></a>
+        <a href="#">Base de dados de interesse<span>Adicione o nome e o link</span></a>
+      </div>
+    </section>
+
+    <section>
+      <div class="aviso">
+        <strong>Como citar:</strong> ao usar materiais deste repositório, cite autoria, título, ano e endereço da página. Cada item informa a licença de uso.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-udesc.png" alt="UDESC – Universidade do Estado de Santa Catarina">
+    <p>Laboratório de Ciência da Política (CidaPOL) · Universidade do Estado de Santa Catarina</p>
+  </div>
+</footer>
+
+</body>
+</html>
