@@ -29,19 +29,13 @@
   body{
     margin:0; font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
     color:var(--texto); background:var(--fundo); line-height:1.6;
-    border-left:22px solid var(--ferrugem);
   }
   a{color:inherit}
   :focus-visible{outline:3px solid var(--ferrugem); outline-offset:3px}
   .wrap{max-width:980px; margin:0 auto; padding:0 24px}
 
-  /* Cabeçalho: logo + chevron vinho, como no cartaz */
+  /* Cabeçalho */
   header{padding:36px 0 8px; position:relative}
-  header .tag{
-    position:absolute; left:-24px; top:48px; width:64px; height:84px;
-    background:var(--vinho);
-    clip-path:polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%);
-  }
   .logo{display:block; margin:0 auto; width:min(420px,80%); height:auto}
   .logo-wrap{background:#fff; width:fit-content; margin:0 auto; padding:6px 14px; border-radius:4px}
 
@@ -104,8 +98,6 @@
   footer img{height:44px; width:auto; background:#fff; padding:4px 8px; border-radius:4px}
 
   @media (max-width:600px){
-    body{border-left-width:12px}
-    header .tag{display:none}
     .painel{padding:22px 16px}
   }
 </style>
@@ -114,7 +106,6 @@
 
 <header>
   <div class="wrap">
-    <span class="tag" aria-hidden="true"></span>
     <div class="logo-wrap">
       <img class="logo" src="assets/logo-cidapol.png" alt="CidaPOL – Laboratório de Ciência da Política">
     </div>
