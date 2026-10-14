@@ -79,6 +79,26 @@
 
   .aviso{background:var(--suave); border-left:6px solid var(--ferrugem); padding:14px 18px; border-radius:0 4px 4px 0; font-size:.95rem}
 
+  /* Acervo (carregado de pesquisas.json) */
+  .filtros{display:grid; gap:10px; grid-template-columns:1fr; margin-bottom:16px}
+  @media (min-width:640px){.filtros{grid-template-columns:2fr 1fr 1fr}}
+  .filtros input,.filtros select{
+    font:inherit; padding:10px 12px; border:1px solid var(--borda); border-radius:4px;
+    background:var(--fundo); color:var(--texto); width:100%
+  }
+  #contagem{font-size:.9rem; margin:0 0 12px; opacity:.8}
+  .item{border:1px solid var(--borda); border-left:6px solid var(--vinho); background:var(--suave); padding:16px 18px; border-radius:4px; margin-bottom:12px}
+  .item h3{margin:0 0 2px; font-size:1.05rem; line-height:1.35}
+  .item .meta{font-size:.88rem; opacity:.85; margin:0 0 8px}
+  .item p{margin:0 0 10px; font-size:.95rem}
+  .item .rodape{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+  .chip{font:inherit; font-size:.78rem; padding:2px 10px; border-radius:999px; border:1px solid var(--vinho); background:transparent; color:inherit; cursor:pointer}
+  .chip:hover{background:var(--vinho); color:#fff}
+  .btn{margin-left:auto; text-decoration:none; background:var(--vinho); color:#fff; padding:6px 14px; border-radius:4px; font-size:.88rem; font-weight:600}
+  .btn:hover{background:var(--vinho-escuro)}
+  .restrito{margin-left:auto; font-size:.85rem; font-weight:600; color:var(--ferrugem)}
+  .erro{border-left-color:var(--ferrugem)}
+
   footer{margin-top:48px; padding:24px 0 36px; border-top:1px solid var(--borda); font-size:.9rem}
   footer .wrap{display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between}
   footer img{height:44px; width:auto; background:#fff; padding:4px 8px; border-radius:4px}
@@ -112,16 +132,27 @@
       <h2>O que você encontra aqui</h2>
       <p>Escolha uma coleção para começar.</p>
       <ul class="lista">
-        <li><a href="acervo/dados/"><strong>Bancos de dados de pesquisa</strong><small>Ciência aberta: revisão de literatura e investigação empírica</small></a></li>
-        <li><a href="acervo/slides/"><strong>Slides de defesa</strong><small>Apresentações de qualificações e defesas</small></a></li>
-        <li><a href="acervo/teses/"><strong>Teses, dissertações e TCCs</strong><small>Pesquisadores do CidaPOL, orientação da Profa. Dra. Samira Kauchakje</small></a></li>
-        <li><a href="acervo/publicacoes/"><strong>Textos publicados</strong><small>Artigos, capítulos e livros</small></a></li>
-        <li><a href="acervo/sumarios-executivos/"><strong>Sumários executivos</strong><small>Resultados em versão curta</small></a></li>
-        <li><a href="acervo/divulgacao/"><strong>Divulgação científica</strong><small>Materiais para organizações públicas</small></a></li>
+        <li><a href="#acervo"><strong>Bancos de dados de pesquisa</strong><small>Ciência aberta: revisão de literatura e investigação empírica</small></a></li>
+        <li><a href="#acervo"><strong>Slides de defesa</strong><small>Apresentações de qualificações e defesas</small></a></li>
+        <li><a href="#acervo"><strong>Teses, dissertações e TCCs</strong><small>Pesquisadores do CidaPOL, orientação da Profa. Dra. Samira Kauchakje</small></a></li>
+        <li><a href="#acervo"><strong>Textos publicados</strong><small>Artigos, capítulos e livros</small></a></li>
+        <li><a href="#acervo"><strong>Sumários executivos</strong><small>Resultados em versão curta</small></a></li>
+        <li><a href="#acervo"><strong>Divulgação científica</strong><small>Materiais para organizações públicas</small></a></li>
         <li><a href="#normas"><strong>Normas do laboratório</strong><small>Coautoria, declaração de uso de IA, nota de participação</small></a></li>
         <li><a href="#links"><strong>Grupos e links de interesse</strong><small>Grupos associados, sites e dados úteis</small></a></li>
       </ul>
     </div>
+
+    <section id="acervo">
+      <h2>Acervo</h2>
+      <div class="filtros">
+        <input id="busca" type="search" placeholder="Buscar por título, autor, resumo ou tag" aria-label="Buscar no acervo">
+        <select id="f-tipo" aria-label="Filtrar por tipo"><option value="">Todos os tipos</option></select>
+        <select id="f-ano" aria-label="Filtrar por ano"><option value="">Todos os anos</option></select>
+      </div>
+      <p id="contagem" aria-live="polite"></p>
+      <div id="lista-acervo"></div>
+    </section>
 
     <section id="normas">
       <h2>Normas do laboratório</h2>
@@ -156,5 +187,79 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var ARQUIVO = "pesquisas.json";
+  var $ = function(id){return document.getElementById(id)};
+  var dados = [];
+
+  function el(tag, cls, txt){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(txt != null) e.textContent = txt;
+    return e;
+  }
+  function norm(s){return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+
+  function preencheSelect(sel, valores){
+    valores.forEach(function(v){
+      var o = el("option", null, v); o.value = v; sel.appendChild(o);
+    });
+  }
+
+  function render(){
+    var q = norm($("busca").value), tipo = $("f-tipo").value, ano = $("f-ano").value;
+    var box = $("lista-acervo"); box.innerHTML = "";
+    var itens = dados.filter(function(d){
+      if(tipo && d.tipo !== tipo) return false;
+      if(ano && String(d.ano) !== ano) return false;
+      if(!q) return true;
+      var palheiro = norm([d.titulo,d.autor,d.resumo,(d.tags||[]).join(" ")].join(" "));
+      return palheiro.indexOf(q) !== -1;
+    });
+    $("contagem").textContent = itens.length + (itens.length === 1 ? " item encontrado" : " itens encontrados");
+    if(!itens.length){ box.appendChild(el("div","item","Nenhum item corresponde à busca.")); return; }
+
+    itens.forEach(function(d){
+      var card = el("article","item");
+      card.appendChild(el("h3",null,d.titulo));
+      card.appendChild(el("p","meta",[d.autor,d.tipo,d.ano].filter(Boolean).join(" · ")));
+      if(d.resumo) card.appendChild(el("p",null,d.resumo));
+      var rod = el("div","rodape");
+      (d.tags||[]).forEach(function(t){
+        var c = el("button","chip",t); c.type = "button";
+        c.addEventListener("click", function(){ $("busca").value = t; render(); });
+        rod.appendChild(c);
+      });
+      if(d.acesso === "publico" && d.link_arquivo){
+        var a = el("a","btn","Abrir documento");
+        a.href = d.link_arquivo; a.target = "_blank"; a.rel = "noopener";
+        rod.appendChild(a);
+      } else {
+        rod.appendChild(el("span","restrito","Acesso restrito"));
+      }
+      card.appendChild(rod);
+      box.appendChild(card);
+    });
+  }
+
+  fetch(ARQUIVO, {cache:"no-cache"})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(json){
+      dados = (Array.isArray(json) ? json : []).sort(function(a,b){return (b.ano||0)-(a.ano||0)});
+      preencheSelect($("f-tipo"), Array.from(new Set(dados.map(function(d){return d.tipo}).filter(Boolean))).sort());
+      preencheSelect($("f-ano"), Array.from(new Set(dados.map(function(d){return String(d.ano)}).filter(Boolean))).sort().reverse());
+      ["busca","f-tipo","f-ano"].forEach(function(id){
+        $(id).addEventListener(id === "busca" ? "input" : "change", render);
+      });
+      render();
+    })
+    .catch(function(){
+      $("contagem").textContent = "";
+      var e = el("div","item erro","Não foi possível carregar " + ARQUIVO + ". Confira se o arquivo está na mesma pasta do index.html e se o JSON é válido. Abrindo o index.html direto do computador, o navegador bloqueia a leitura; teste pelo endereço do GitHub Pages ou com um servidor local.");
+      $("lista-acervo").appendChild(e);
+    });
+})();
+</script>
 </body>
 </html>
