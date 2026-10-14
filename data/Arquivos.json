@@ -1,4 +1,5 @@
-{
+[
+  {
     "id": 1,
     "titulo": "QCA e Process Tracing: conectando Ciência Política e História",
     "autor": "Renato Perissinotto",
@@ -6,8 +7,7 @@
     "ano": 2024,
     "resumo": "Sobre Process Tracing e a pesquisa nas Ciências Políticas",
     "acesso": "publico",
-    "link_arquivo": "documentos/QCA e Process Tracing - conectando Ciência Política e História.pdf",
+    "link_arquivo": "documentos/qca_process_tracing.pdf",
     "tags": ["artigo", "pesquisa", "CIdaPOL"]
   }
-
-
+]
