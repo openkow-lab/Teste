@@ -11,3 +11,16 @@
     "tags": ["artigo", "pesquisa"]
   }
 ]
+{
+"id": 2,
+    "titulo": "Modelo de TCC - Clara Guesser",
+    "autor": "Clara Guesser",
+    "tipo": "TCC",
+    "ano": 2021,
+    "resumo": "Modelo de TCC/Escrita usada no cIdaPOL",
+    "acesso": "publico",
+    "link_arquivo": "documentos/tcc_clara_guesser.pdf",
+    "tags": ["TCC", "pesquisa", "modelo"]
+}
+[
+
