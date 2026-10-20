@@ -23,4 +23,56 @@
     "tags": ["TCC", "pesquisa", "modelo"]
 }
 [
+  {
+    "id": 3,
+    "titulo": "Modelo de Tese - Evelise Zampier",
+    "autor": "Evelise Zampier da Silva",
+    "tipo": "Tese",
+    "ano": 2021,
+    "resumo": "Modelo de Tese/Escrita usada no cIdaPOL",
+    "acesso": "publico",
+    "link_arquivo": "documentos/tese_evelise.pdf",
+    "tags": ["tese", "pesquisa", "modelo"]
+  }
+]
+{
+    "id": 4,
+    "titulo": "Modelo de Tese - Samira Kauchakje",
+    "autor": "Samira Kauchakje",
+    "tipo": "Tese",
+    "ano": 2017,
+    "resumo": "Modelo de Tese/Escrita usada no cIdaPOL",
+    "acesso": "publico",
+    "link_arquivo": "documentos/tese_samira.pdf",
+    "tags": ["tese", "pesquisa", "modelo"]
+  }
+[
+{
+    "id": 5,
+    "titulo": "Modelo de Dissertação - Patricia Sene de Almeida",
+    "autor": "Patricia Sene de Almeida",
+    "tipo": "Dissertação",
+    "ano": 2021,
+    "resumo": "Modelo de Dissertação/Escrita usada no cIdaPOL",
+    "acesso": "publico",
+    "link_arquivo": "documentos/dissertação_patricia_almeida.pdf",
+    "tags": ["dissertação", "pesquisa", "modelo"]
+  }
+]
+{
+    "id": 6,
+    "titulo": "Produção do Conhecimento:a prática da revisão sistemática da literatura",
+    "autor": "Samira Kauchakje", "Maria Arlete Rosa",
+    "tipo": "Livro",
+    "ano": 2020,
+    "resumo": "A revisão da literatura é o processo de busca, análise e descrição de um conjunto de conhecimentos, realizado com o propósito de encontrar respostas para uma pergunta específica. Existem diferentes métodos ou modalidades de revisão da literatura, entre os quais se encontram as revisões narrativa, sistemática, integrativa e de escopo. Consideramos que não existe um caminho necessariamente melhor do que outro, mas revisões realizadas com maior ou menor competência e rigor. O essencial é que a pesquisadora ou o pesquisador tenha clareza sobre seus objetivos e sobre os procedimentos que deverão ser cumpridos ao escolher determinado método para buscar, selecionar, discutir e analisar os textos. Este livro tem como foco a revisão sistemática da literatura, conhecida pela sigla RSL. Seu objetivo é apresentar orientações práticas para a realização de suas diferentes etapas e fases, dedicando especial atenção aos processos de busca e seleção dos estudos. Mais do que retomar a discussão teórica sobre os métodos de revisão da literatura ou aprofundar as características próprias do método sistemático, a obra propõe um roteiro prático, acompanhado de orientações e sugestões destinadas a apoiar estudantes e pesquisadores na aplicação sistemática dos procedimentos de busca, seleção e análise do conhecimento produzido em determinada área. Apresentado no formato de um guia de boas práticas, o livro recorda, de um lado, que “toda pesquisa científica requer paciência, autodisciplina e uma inesgotável capacidade de se aborrecer”, como escreveu Terry Eagleton. De outro, procura estimular estudantes de graduação e pós-graduação, assim como pesquisadores, a manterem o entusiasmo diante dos procedimentos sistemáticos exigidos pela investigação científica e, sobretudo, diante das descobertas que ela pode proporcionar.",
+    "acesso": "publico",
+    "link_arquivo": "documentos/produção_do_conhecimento_vol1.pdf",
+    "tags": ["Livro", "RSL", "metodologia", "guia"]
+  }
+]
+
+
+
+
 
