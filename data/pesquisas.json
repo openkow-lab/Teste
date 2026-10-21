@@ -65,15 +65,4 @@
     "link_arquivo": "documentos/producao_do_conhecimento_vol1.pdf",
     "tags": ["Livro", "RSL", "metodologia", "guia"]
   },
-  {
-    "id": 7,
-    "titulo": "Guia de Uso de IA: Modelo para inserir nos textos",
-    "autor": "CidaPOL",
-    "ano": 2026,
-    "tipo": "Normas",
-    "resumo": "Diretrizes e modelo oficial do laboratório para o uso transparente de inteligência artificial em produções acadêmicas e científicas.",
-    "tags": ["IA", "Normas", "Metodologia"],
-    "acesso": "publico",
-    "link_arquivo": "normas/modelo_ia.pdf"
-  }
 ]
