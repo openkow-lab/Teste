@@ -64,17 +64,16 @@
     "acesso": "publico",
     "link_arquivo": "documentos/producao_do_conhecimento_vol1.pdf",
     "tags": ["Livro", "RSL", "metodologia", "guia"]
+  },
+  {
+    "id": 7,
+    "titulo": "Diretrizes para o uso ético e responsável da Inteligência Artificial Generativa: um guia prático para pesquisadores",
+    "autor": "Rafael Cardoso Sampaio; Marcelo Sabbatini; Ricardo Limongi",
+    "tipo": "Livro",
+    "ano": 2024,
+    "resumo": "Guia prático para pesquisadores sobre o uso ético e responsável da IA generativa na pesquisa científica. Publicado pela Editora Intercom (São Paulo), ISBN 978-85-8208-142-6.",
+    "acesso": "publico",
+    "link_arquivo": "normas/diretrizes-uso-etico-ia-generativa.pdf",
+    "tags": ["Livro", "IA", "ética", "guia", "normas"]
   }
-]
-{
-  "id": 7,
-  "titulo": "Diretrizes para o uso ético e responsável da Inteligência Artificial Generativa: um guia prático para pesquisadores",
-  "autor": "Rafael Cardoso Sampaio; Marcelo Sabbatini; Ricardo Limongi",
-  "tipo": "Livro",
-  "ano": 2024,
-  "resumo": "Guia prático para pesquisadores sobre o uso ético e responsável da IA generativa na pesquisa científica. Publicado pela Editora Intercom (São Paulo), ISBN 978-85-8208-142-6.",
-  "acesso": "publico",
-  "link_arquivo": "normas/diretrizes-uso-etico-ia-generativa.pdf",
-  "tags": ["Livro", "IA", "ética", "guia", "normas"]
-}
 ]
