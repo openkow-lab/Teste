@@ -71,6 +71,20 @@
   .links a span{display:block; font-weight:400; font-size:.9rem; opacity:.8}
   .links a:hover{border-color:var(--vinho)}
 
+  /* Card em destaque nas normas */
+  .links a.destaque-norma{
+    grid-column:1 / -1;
+    background:var(--vinho); color:#fff; border-color:var(--vinho);
+    padding:20px 22px; font-size:1.1rem;
+  }
+  .links a.destaque-norma span{opacity:.9}
+  .links a.destaque-norma:hover{background:var(--vinho-escuro); border-color:var(--vinho-escuro)}
+  .selo{
+    display:block; width:fit-content; font-size:.72rem; font-weight:600;
+    letter-spacing:.06em; text-transform:uppercase;
+    background:#fff; color:var(--vinho); padding:2px 10px; border-radius:999px; margin-bottom:8px;
+  }
+
   .aviso{background:var(--suave); border-left:6px solid var(--ferrugem); padding:14px 18px; border-radius:0 4px 4px 0; font-size:.95rem}
 
   /* Acervo (carregado de pesquisas.json) */
@@ -148,6 +162,11 @@
     <section id="normas">
       <h2>Normas do laboratório</h2>
       <div class="links">
+        <a class="destaque-norma" href="normas/diretrizes-uso-etico-ia-generativa.pdf" target="_blank" rel="noopener">
+          <span class="selo">Em destaque</span>
+          Guia de Uso de IA
+          <span>Diretrizes para o uso ético e responsável da IA generativa, com orientações para declarar o uso de IA nas pesquisas</span>
+        </a>
         <a href="normas/coautoria.pdf">Coautoria<span>Critérios e ordem de autoria</span></a>
         <a href="normas/nota-cidapol.pdf">Nota de participação CidaPOL<span>Texto padrão para publicações</span></a>
       </div>
